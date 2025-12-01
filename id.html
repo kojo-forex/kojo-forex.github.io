@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kojoforex - December to Remember Giveaway</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fdbb2d, #b21f1f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #fdbb2d;
+        }
+        
+        .application-id {
+            font-size: 2rem;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            letter-spacing: 2px;
+            border: 1px solid rgba(253, 187, 45, 0.3);
+        }
+        
+        .copy-btn {
+            background: linear-gradient(to right, #fdbb2d, #b21f1f);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .copy-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(253, 187, 45, 0.4);
+        }
+        
+        .copy-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .generate-btn {
+            background: transparent;
+            color: #fdbb2d;
+            border: 2px solid #fdbb2d;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .generate-btn:hover {
+            background: rgba(253, 187, 45, 0.1);
+        }
+        
+        .message {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .success {
+            background: rgba(46, 204, 113, 0.2);
+            border: 1px solid #2ecc71;
+            color: #2ecc71;
+        }
+        
+        .instructions {
+            margin-top: 30px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .instructions h3 {
+            color: #fdbb2d;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+        }
+        
+        .emoji {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .application-id {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">🎁🎉🥂</div>
+        <h1 class="logo">KOJOFOREX</h1>
+        <p class="subtitle">December to Remember Giveaway</p>
+        
+        <p>Your application ID number is:</p>
+        <div class="application-id" id="applicationId">KJD01XXXGHN25</div>
+        
+        <button class="copy-btn" id="copyButton">Copy Application ID</button>
+        <button class="generate-btn" id="generateButton">Generate New ID</button>
+        
+        <div class="message" id="message"></div>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ul>
+                <li>Your unique application ID has been generated above</li>
+                <li>Click the "Copy Application ID" button to copy it to your clipboard</li>
+                <li>Use this ID for all giveaway-related communications</li>
+                <li>Keep this ID safe as it cannot be recovered if lost</li>
+                <li>If needed, you can generate a new ID, but note that only the latest one will be valid</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const applicationIdElement = document.getElementById('applicationId');
+            const copyButton = document.getElementById('copyButton');
+            const generateButton = document.getElementById('generateButton');
+            const messageElement = document.getElementById('message');
+            
+            // Function to generate random characters for the ID
+            function generateRandomChars(length) {
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                let result = '';
+                for (let i = 0; i < length; i++) {
+                    result += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return result;
+            }
+            
+            // Function to generate a new application ID
+            function generateApplicationId() {
+                const randomPart = generateRandomChars(3); // Generate 3 random characters
+                return `KJD01${randomPart}GHN25`;
+            }
+            
+            // Set initial application ID
+            applicationIdElement.textContent = generateApplicationId();
+            
+            // Copy to clipboard functionality
+            copyButton.addEventListener('click', function() {
+                const applicationId = applicationIdElement.textContent;
+                
+                // Using the Clipboard API
+                navigator.clipboard.writeText(applicationId).then(function() {
+                    showMessage('Application ID copied to clipboard!', 'success');
+                }, function() {
+                    // Fallback for older browsers
+                    const textArea = document.createElement('textarea');
+                    textArea.value = applicationId;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showMessage('Application ID copied to clipboard!', 'success');
+                });
+            });
+            
+            // Generate new ID functionality
+            generateButton.addEventListener('click', function() {
+                applicationIdElement.textContent = generateApplicationId();
+                showMessage('New Application ID generated!', 'success');
+            });
+            
+            // Function to show messages
+            function showMessage(text, type) {
+                messageElement.textContent = text;
+                messageElement.className = 'message ' + type;
+                messageElement.style.display = 'block';
+                
+                setTimeout(function() {
+                    messageElement.style.display = 'none';
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
