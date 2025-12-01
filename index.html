@@ -7,7 +7,7 @@
 <meta property="og:description" content="Follow And Win Ghs 1000 Or Free Vvip Forex Mentorship Giveaway Today!!" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:image" itemprop="image" content="https://kojo-forex.github.io/kavaa.png">
+<meta property="og:image" itemprop="image" content="https://kojo-forex.github.io/kavaa.jpg">
 <meta property="og:type" content="website">
 <meta property="fb:app_id" content="966242223397117">
 <meta property="og:url" content="https://kojo-forex.github.io">
@@ -292,7 +292,130 @@
         s.parentNode.insertBefore(hm, s);
     })();
 </script>
+	<script>
+// Notification system for Kojoforex Giveaway
+(function() {
+    // Create notification container
+    const notificationContainer = document.createElement('div');
+    notificationContainer.id = 'kojoforax-notifications';
+    notificationContainer.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10000;
+        max-width: 300px;
+    `;
+    document.body.appendChild(notificationContainer);
+
+    // Random names and IDs data
+    const names = [
+        "Alex Junior", "Sarah Johnson", "Mike Thompson", "Lisa Anderson", 
+        "David Brown", "Emma Wilson", "James Miller", "Sophia Davis",
+        "Robert Taylor", "Maria Garcia", "Daniel Martinez", "Jennifer Lee",
+        "Christopher White", "Amanda Clark", "Kevin Lewis", "Michelle Walker"
+    ];
+
+    // Function to generate random application ID
+    function generateRandomId() {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let randomPart = '';
+        for (let i = 0; i < 3; i++) {
+            randomPart += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return `KJD01${randomPart}GHN25`;
+    }
+
+    // Function to create and show notification
+    function showNotification() {
+        const randomName = names[Math.floor(Math.random() * names.length)];
+        const randomId = generateRandomId();
+        
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            background: #fdbb2d;
+            color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-left: 4px solid #fdbb2d;
+            animation: slideIn 0.5s ease-out;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        `;
+
+        notification.innerHTML = `
+            <div style="font-weight: bold; margin-bottom: 5px;">🎉 Congratulations!</div>
+            <div style="font-size: 14px;">
+                <strong>${randomName}</strong>, your giveaway application has been submitted!
+            </div>
+            <div style="font-size: 12px; margin-top: 5px; background: rgba(255,255,255,0.1); padding: 5px; border-radius: 4px;">
+                Application ID: <strong>${randomId}</strong>
+            </div>
+        `;
+
+        // Add CSS for animation
+        if (!document.querySelector('#notification-styles')) {
+            const style = document.createElement('style');
+            style.id = 'notification-styles';
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        notificationContainer.appendChild(notification);
+
+        // Remove notification after 5 seconds
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.5s ease-in forwards';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 500);
+        }, 5000);
+    }
+
+    // Show first notification after 2 seconds
+    setTimeout(showNotification, 2000);
+
+    // Show subsequent notifications every 8-12 seconds
+    setInterval(showNotification, 8000 + Math.random() * 4000);
+
+    // Optional: Show notification on button click (if you want manual trigger)
+    function addNotificationButton() {
+        const button = document.createElement('button');
+        button.textContent = 'Test Notification';
+        button.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            background: #fdbb2d;
+            color: #1a2a6c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 10001;
+        `;
+        button.onclick = showNotification;
+        document.body.appendChild(button);
+    }
+
+    // Uncomment the line below if you want a test button
+    // addNotificationButton();
+})();
+</script>
 <center><p>© 2025 KOJOFOREX. All rights reserved.</p></center>
 </body>
 
 </html>
+
